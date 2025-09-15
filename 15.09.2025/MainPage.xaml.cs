@@ -1,22 +1,24 @@
 namespace MauiApp2
 {
+    using System.Collections.ObjectModel;
+
     public partial class MainPage : ContentPage
     {
-        string[] items = new string[10];
-        string item = "";
-        int number=0;
+        ObservableCollection<string> items = new ObservableCollection<string>();
 
         public MainPage()
         {
             InitializeComponent();
+            itemlist.ItemsSource = items;
         }
-
 
         private void Add_Clicked(object sender, EventArgs e)
         {
-            item= Entry.Text;
-            items[number]= item;
-            number++;
+            if (!string.IsNullOrWhiteSpace(Entryitem.Text))
+            {
+                items.Add(Entryitem.Text);
+                Entryitem.Text = string.Empty;
+            }
         }
     }
 }
