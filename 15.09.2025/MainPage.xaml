@@ -22,9 +22,9 @@
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
 
-        <Entry  x:Name="Entry" Placeholder="Entry Item" Grid.Column="1" WidthRequest="200"/>
+        <Entry  x:Name="Entryitem" Placeholder="Entry Item" Grid.Column="1" WidthRequest="200"/>
         <Button x:Name="Add" Text="Add" Grid.Column="4" Margin="10" Clicked="Add_Clicked" BackgroundColor="Pink"/>
-        <CollectionView x:Name="itemlist"   ItemsLayout="VerticalList"   ItemsSource="item"/>
+        <CollectionView x:Name="itemlist"  ItemsLayout="VerticalList"  HeightRequest="500"  BackgroundColor="AliceBlue" WidthRequest="500" Grid.Row="5" Grid.Column="1" Margin="30" />
 
     </Grid>
 </ContentPage>
