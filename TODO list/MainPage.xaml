@@ -4,7 +4,7 @@
              x:Class="MauiApp2.MainPage">
 
     <ContentPage.Resources>
-       
+
     </ContentPage.Resources>
     <VerticalStackLayout Spacing="15">
         <Label Text="TODO list" FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center" ></Label>
@@ -13,15 +13,16 @@
             <Button Clicked="addBtn_Clicked" Text="Add" WidthRequest="80" ></Button>
         </HorizontalStackLayout>
 
-        <CollectionView x:Name="todoListView">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <Border Margin="5" Padding="10" BackgroundColor="#eeeeee">
-                        <Label Text="{Binding TodoItems}" FontSize="Medium" />
+        <CollectionView x:Name="todoListView"
+                        ItemsSource="{Binding TodoItems}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border Margin="5" Padding="10" BackgroundColor="#eee">
+                        <Label Text="{Binding .}" FontSize="Medium"/>
                     </Border>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-            </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
 
 </ContentPage>
