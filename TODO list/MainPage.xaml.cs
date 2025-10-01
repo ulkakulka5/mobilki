@@ -5,13 +5,14 @@ namespace MauiApp2
 {
     public partial class MainPage : ContentPage
     {
-        
-        private ObservableCollection<string> todoItems = new ObservableCollection<string>();
+
+        public ObservableCollection<string> TodoItems { get; set; }
 
         public MainPage()
         {
             InitializeComponent();
-            todoListView.ItemsSource = todoItems;
+            TodoItems = new ObservableCollection<string>();
+            BindingContext = this;
         }
 
         private void addBtn_Clicked(object sender, EventArgs e)
@@ -22,7 +23,8 @@ namespace MauiApp2
                 return;
             else
             {
-                todoItems.Add(newTask);
+                TodoItems.Add(newTask);
+                Console.WriteLine(newTask);
                 todoEntry.Text = string.Empty;
             }
         }
